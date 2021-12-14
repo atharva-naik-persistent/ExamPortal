@@ -1,0 +1,5 @@
+package com.examination.examserver.service;
+
+public class UserService {
+
+}

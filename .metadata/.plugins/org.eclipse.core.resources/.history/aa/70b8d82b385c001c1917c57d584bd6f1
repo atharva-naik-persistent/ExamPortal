@@ -1,0 +1,38 @@
+package com.examination.examserver.controller;
+
+import org.springframework.web.blind.annotation.RequestMapping;
+import org.springframework.wen.blind.annotation.RestController;
+
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+	@Autowired
+	private UserService userService;
+	
+	//creating user
+	@PostMapping("/")
+	public User createUser(@RequestBody User user)
+	{
+		
+		Set<UserRole> roles=new HashSet<>();
+		
+		
+		Role role=new Role();
+		role.setRoleId(45L);
+		role.setRoleName("NORMAL");
+		
+		
+		UserRole userRole=new UserRole();
+		userRole.setUser(user);
+		userRole.setRole(role);
+		
+		
+		roles.add(UserRole);
+		
+		
+		
+		return this.userService.createUser(user, roles);
+	}
+}

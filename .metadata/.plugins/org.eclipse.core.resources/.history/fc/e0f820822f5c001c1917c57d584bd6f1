@@ -1,0 +1,5 @@
+package com.examination.examserver.repo;
+
+public class RoleRepository {
+
+}
