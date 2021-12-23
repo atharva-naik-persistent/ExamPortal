@@ -1,51 +1,45 @@
-package com.examination.examserver.model;
+package com.exam.model;
 
 import javax.persistence.*;
 
 @Entity
 public class UserRole {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long userRoleId;
-	
-	//User
-	@ManyToOne(fetch = FetchType.EAGER)
-	private User user;
-	
-	//Role
-	@ManyToOne
-	private Role role;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long userRoleId;
 
-	public UserRole() {
-		
-	}
+    //user
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
 
-	public Long getUserRoleId() {
-		return userRoleId;
-	}
+    @ManyToOne
+    private Role role;
 
-	public void setUserRoleId(Long userRoleId) {
-		this.userRoleId = userRoleId;
-	}
+    public UserRole() {
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public Long getUserRoleId() {
+        return userRoleId;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setUserRoleId(Long userRoleId) {
+        this.userRoleId = userRoleId;
+    }
 
-	public Role getRole() {
-		return role;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
-	
-	
-	
-	
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }
